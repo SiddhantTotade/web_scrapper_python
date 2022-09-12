@@ -5,7 +5,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://internshala.com/student/dashboard?referral=header"
+url = "https://www.airtel.in/myplan-infinity/"
 
 # Getting the html
 
@@ -15,8 +15,9 @@ htmlContent = r.content
 
 # Parsing the html
 
-soup = BeautifulSoup(htmlContent,'html.parser')
+soup = BeautifulSoup(htmlContent, 'html.parser')
 # print(soup.prettify)
 
 # Html tree traversal
-title = soup.find_all('a')
+title = soup.find_all('title')
+print(title)
