@@ -22,4 +22,4 @@ elem = driver.find_elements(
 data_list = []
 
 for i in elem:
-    print(i)
+    print(i.text)
