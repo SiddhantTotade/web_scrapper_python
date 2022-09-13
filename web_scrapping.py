@@ -65,7 +65,22 @@ from selenium.webdriver.common.by import By
 driver = webdriver.Chrome("/usr/bin/chromedriver")
 driver.get("https://www.airtel.in/myplan-infinity/")
 
-elem = driver.find_elements(By.CLASS_NAME, "price")
+# elem = driver.find_elements(By.CLASS_NAME, "border-bottom")
 
-for item in elem:
-    print(item.text)
+# elem = driver.find_elements(
+#     By.XPATH, "//span[contains(@class,'border-bottom')]")
+
+# elem = driver.find_elements(
+#     By.XPATH, "//div[@class,'border-bottom']/span")
+
+elem = driver.find_elements(
+    By.CSS_SELECTOR, "div.border-bottom > span:first-child")
+
+list = []
+
+for i in elem:
+    for j in elem:
+        if (j == "N/A" or j == "YES"):
+            list.append(j.text)
+
+print(list)
