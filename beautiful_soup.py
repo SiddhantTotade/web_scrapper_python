@@ -30,12 +30,8 @@ soup = BeautifulSoup(htmlContent, 'html.parser')
 # anchor = soup.find_all('a')
 # all_links = set()
 
-# for link in anchor:
-#     if(link.get('href') != '#'):
-#         linkText = "https://www.codewithharry.com/videos/python-web-scraping-tutorial-in-hindi/"+link.get('href')
-#         all_links.add(link)
-#         print(linkText)
-
+elem = soup.find('div',class_='previous_homepage')
+print(elem)
 
 # ids = soup.find(id='panels')
 # for elem in ids.children:
@@ -54,6 +50,3 @@ soup = BeautifulSoup(htmlContent, 'html.parser')
 
 # elem = soup.select('#panels')
 # print(elem)
-
-elem = soup.find('div',class_='previous_homepage')
-print(elem)
