@@ -30,7 +30,7 @@ soup = BeautifulSoup(htmlContent, 'html.parser')
 # anchor = soup.find_all('a')
 # all_links = set()
 
-elem = soup.find('div',class_='previous_homepage')
+elem = soup.find('div')
 print(elem)
 
 # ids = soup.find(id='panels')
