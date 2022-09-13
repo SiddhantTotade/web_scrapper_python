@@ -59,6 +59,7 @@
 
 # ---------------------------------------
 
+from math import floor
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -76,11 +77,34 @@ driver.get("https://www.airtel.in/myplan-infinity/")
 elem = driver.find_elements(
     By.CSS_SELECTOR, "div.border-bottom > span:first-child")
 
-list = []
+data_list = []
+
+# print(len(elem))
+
+# for i in len(elem):
+#     data_list.append([])
+#     for j in elem:
+#         if (j.text == "N/A" or j.text == "YES"):
+#             data_list[i].append(j.text)
+#             break
+#         data_list[i].append(j.text)
 
 for i in elem:
-    for j in elem:
-        if (j == "N/A" or j == "YES"):
-            list.append(j.text)
+    data_list.append(i.text)
 
-print(list)
+# print(type(len(data_list)))
+# print(data_list)
+
+# print(floor(len(data_list)/5))
+storelist = []
+
+for i in range(floor(len(data_list)/4)):
+    for j in range(floor(len(data_list)/4)):
+        temp_list = [i][j]
+        # if(data_list[j] == 'N/A' or data_list[j] == 'YES'):
+        #     temp_list.append(data_list[j])
+        #     break
+        temp_list.append(data_list[j])
+    storelist.append(temp_list)
+
+print(storelist)
